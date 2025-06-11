@@ -187,5 +187,5 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 Have questions or suggestions? Feel free to reach out!
 
--   **Your Name/Organization Name** - [your_email@example.com](mailto:your_email@example.com)
+-   **Jinto Joseph** - [jintojoseph.jo@gmail.com](mailto:jintojoseph.jo@gmail.com)
 -   **Project Link:** [https://github.com/yourusername/petcity](https://github.com/yourusername/petcity) 
