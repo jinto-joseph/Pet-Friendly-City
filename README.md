@@ -1,4 +1,4 @@
-# 🐾 PetCity - Making Cities Pet-Friendly 🏡
+# 🐾 Pet-Friendly City - Making Cities Pet-Friendly 🏡
 
 "Transforming Urban Landscapes into Havens for Our Furry Friends!"
 
