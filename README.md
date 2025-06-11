@@ -188,4 +188,4 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 Have questions or suggestions? Feel free to reach out!
 
 -   **Jinto Joseph** - [jintojoseph.jo@gmail.com](mailto:jintojoseph.jo@gmail.com)
--   **Project Link:** [https://github.com/yourusername/petcity](https://github.com/yourusername/petcity) 
+-   **Project Link:** [Pet-Friendly City]([https://github.com/yourusername/petcity](https://jinto-joseph.github.io/Pet-Friendly-City/)) 
