@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCity - Making Cities Pet-Friendly</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Animated Dog GIF -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div id="animated-dog" class="dog-animation col-12 col-md-6 col-lg-4">
+                <img src="assets/dog-running.gif" alt="Running Dog" class="img-fluid theme-image" />
+                <blockquote class="blockquote mb-0 mt-3">
+                    <p class="mb-0 lead text-muted fst-italic theme-text">"The bond with a true pet is as lasting as the ties of blood."</p>
+                    <footer class="blockquote-footer mt-2 text-primary theme-text">~ Konrad Lorenz</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-paw"></i> PetCity
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="learn-more.html">Learn More</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="stories.html">Success Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources.html">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button id="theme-toggle" class="btn btn-outline-primary">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Transform Our Cities into Pet-Friendly Havens! 🐾</h1>
+                    <p class="lead mb-4">Join our movement to create safe and welcoming environments for our beloved animal companions.</p>
+                    <div class="cta-buttons">
+                        <a href="#volunteer" class="btn btn-primary btn-lg me-3">Join the Movement</a>
+                        <a href="#stories" class="btn btn-outline-primary btn-lg">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/hero-image.jpg" alt="Happy pets and people" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">What Makes a City Pet-Friendly?</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-heart mb-3"></i>
+                        <h3>Zero Animal Cruelty</h3>
+                        <p>We work tirelessly to prevent animal abuse and ensure their safety through:</p>
+                        <ul>
+                            <li>24/7 Helpline Support</li>
+                            <li>Rapid Response Team</li>
+                            <li>Community Education</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-hospital mb-3"></i>
+                        <h3>Healthcare Access</h3>
+                        <p>Ensuring quality healthcare for all pets through:</p>
+                        <ul>
+                            <li>Mobile Vet Clinics</li>
+                            <li>Emergency Care</li>
+                            <li>Vaccination Drives</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-bowl-food mb-3"></i>
+                        <h3>Food Security</h3>
+                        <p>Ensuring no pet goes hungry with our initiatives:</p>
+                        <ul>
+                            <li>Community Food Banks</li>
+                            <li>Emergency Supplies</li>
+                            <li>Nutrition Programs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-tree mb-3"></i>
+                        <h3>Safe Spaces</h3>
+                        <p>Creating pet-friendly environments through:</p>
+                        <ul>
+                            <li>Dedicated Parks</li>
+                            <li>Safe Walking Trails</li>
+                            <li>Play Areas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stories Section -->
+    <section id="stories" class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h2 class="theme-text">Impact Stories</h2>
+                <button class="btn btn-primary" onclick="openStoryModal()">
+                    <i class="fas fa-plus me-2"></i>Share Your Story
+                </button>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center mb-4">
+                <button class="btn btn-outline-primary m-2" data-filter="all">All Stories</button>
+                <button class="btn btn-outline-primary m-2" data-filter="rescue">Rescue</button>
+                <button class="btn btn-outline-primary m-2" data-filter="adoption">Adoption</button>
+                <button class="btn btn-outline-primary m-2" data-filter="community">Community</button>
+            </div>
+            <div id="storiesGrid" class="row g-4">
+                <!-- Stories will be dynamically added here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Form Section -->
+    <section id="volunteer" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h2 class="text-center mb-4 theme-text">Become a Volunteer</h2>
+                    <form id="volunteer-form" class="volunteer-form p-4 rounded-3 shadow-sm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control theme-input" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control theme-input" name="city" placeholder="City" required>
+                        </div>
+                        <div class="mb-3">
+                            <select name="role" class="form-select theme-input" required>
+                                <option value="" disabled selected class="theme-text">Select Role Preference</option>
+                                <option value="organizer" class="theme-text">Event Organizer</option>
+                                <option value="caretaker" class="theme-text">Pet Caretaker</option>
+                                <option value="advocate" class="theme-text">Community Advocate</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control theme-input" name="email" placeholder="Email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign Up to Volunteer (Google Form)</button>
+                        <div class="form-text text-center theme-text">You will be redirected to our official Google Form.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pet Adoption Section -->
+    <section id="adoption" class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h2 class="theme-text">Adopt a Pet</h2>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#surrenderPetModal">
+                    <i class="fas fa-plus me-2"></i>Surrender a Pet
+                </button>
+            </div>
+            <div id="adoptionCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Carousel items will be dynamically added by JavaScript -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#adoptionCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#adoptionCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 theme-text">Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+                            <form id="contact-form">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control theme-input" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control theme-input" name="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control theme-input" name="subject" placeholder="Subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control theme-input" name="message" rows="4" placeholder="Your Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                            </form>
+                            
+                            <div class="text-center mt-4">
+                                <h5 class="mb-3 form-text">Or reach us through:</h5>
+                                <div class="d-flex justify-content-center gap-4">
+                                    <a href="https://wa.me/917024577333?text=Hi" target="_blank" class="text-success fs-2">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/petfriendlycity" target="_blank" class="text-danger fs-2">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Details Modal -->
+    <div class="modal fade" id="storyDetailsModal" tabindex="-1" aria-labelledby="storyDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="storyDetailsModalLabel">Story Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="storyDetailsContent">
+                    <!-- Story details will be populated here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adoption Request Modal -->
+    <div class="modal fade" id="adoptionRequestModal" tabindex="-1" aria-labelledby="adoptionRequestModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adoptionRequestModalLabel">Adoption Request</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="adoption-request-form">
+                        <input type="hidden" id="pet-name" name="petName">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="adopterName" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" name="adopterEmail" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" name="adopterPhone" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="adoptionReason" rows="4" placeholder="Why do you want to adopt this pet?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Adoption Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Surrender Pet Modal -->
+    <div class="modal fade" id="surrenderPetModal" tabindex="-1" aria-labelledby="surrenderPetModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="surrenderPetModalLabel">Surrender a Pet</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="surrender-pet-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="ownerName" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" name="ownerEmail" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" name="ownerPhone" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="petName" placeholder="Pet's Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select" name="petType" required>
+                                <option value="" disabled selected>Select Pet Type</option>
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" class="form-control" name="petAge" placeholder="Pet's Age" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="petDescription" rows="4" placeholder="Describe your pet (breed, personality, health status, etc.)" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="surrenderReason" rows="4" placeholder="Reason for surrendering" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Surrender Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PawBuddy Chatbot -->
+    <div id="pawbuddy" class="chatbot">
+        <button id="chat-toggle" class="btn btn-primary rounded-circle">
+            <i class="fas fa-comment"></i>
+        </button>
+        <div id="chat-window" class="chat-window hidden">
+            <div class="chat-header">
+                <h5 class="mb-0">Chat with PawBuddy 🐶</h5>
+                <button class="btn-close" id="chat-close"></button>
+            </div>
+            <div id="chat-messages" class="chat-messages"></div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" class="form-control" placeholder="Ask PawBuddy about the campaign...">
+                <button id="chat-send" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2025 PetCity. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

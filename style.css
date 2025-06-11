@@ -1,0 +1,745 @@
+/* Global Styles */
+:root {
+    /* Light theme colors */
+    --primary-color: #28a745;
+    --secondary-color: #6c757d;
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0,0,0,0.1);
+    --input-bg: #f8f9fa;
+    --input-text: #333333;
+    --input-border: #ced4da;
+    --placeholder-color: #6c757d;
+    --form-text-color: #6c757d;
+}
+
+/* Dark theme colors */
+[data-theme="dark"] {
+    --primary-color: #28a745;
+    --secondary-color: #6c757d;
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-bg: #2d2d2d;
+    --input-bg: #2d2d2d;
+    --input-text: #ffffff;
+    --input-border: #404040;
+    --placeholder-color: #a0a0a0;
+    --form-text-color: #a0a0a0;
+
+    /* Specific input background for dark mode */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        background-color: var(--input-bg) !important;
+        color: var(--input-text) !important;
+        border-color: var(--input-border) !important;
+        background-image: none !important; /* To remove any default white background image */
+    }
+
+    .form-select option {
+        background-color: var(--input-bg) !important;
+        color: var(--input-text) !important;
+    }
+
+    /* Override for Bootstrap's form-control and form-select in dark mode */
+    .form-control,
+    .form-select {
+        background-color: var(--input-bg) !important;
+        color: var(--input-text) !important;
+        border-color: var(--input-border) !important;
+        background-image: none !important;
+    }
+}
+
+/* Theme transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--bg-color) !important;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--text-color) !important;
+}
+
+.navbar-brand i {
+    color: var(--primary-color);
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Sections */
+.hero {
+    padding-top: 0rem;
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--card-bg) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-small {
+    padding-top: 6rem;
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--card-bg) 100%);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1, .hero-small h1 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.hero p, .hero-small p {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    opacity: 0.9;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Feature Cards */
+.feature-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    height: 100%;
+    padding: 2rem;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.feature-card p {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.feature-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-card ul li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Initiative Cards */
+.initiative-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.initiative-card h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.initiative-card p {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.initiative-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.initiative-card ul li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.initiative-card ul li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Story Cards */
+.story-card .card {
+    transition: transform 0.3s ease;
+}
+
+.story-card .card:hover {
+    transform: translateY(-5px);
+}
+
+.story-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.story-card .badge {
+    font-size: 0.8rem;
+    padding: 0.5em 1em;
+}
+
+/* Impact Stats */
+.impact-stat {
+    text-align: center;
+    padding: 1rem;
+}
+
+.impact-stat h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.impact-stat p {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Forms */
+.form-control, .form-select {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border-color: var(--input-border) !important;
+    padding: 0.75rem;
+    border-radius: 5px;
+    background-image: none !important; /* Ensure no default background images */
+}
+
+.form-control::placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 1;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 1;
+}
+
+.form-control::-ms-input-placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 1;
+}
+
+.form-select {
+    color: var(--input-text);
+    background-color: var(--input-bg);
+    /* Default light arrow for light mode */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+}
+
+[data-theme="dark"] .form-select {
+    /* White arrow for dark mode */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+.form-select option {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    color: var(--text-color);
+}
+
+.card-title {
+    color: var(--text-color);
+}
+
+.card-text {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Modals */
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    border-bottom-color: var(--border-color);
+}
+
+.modal-footer {
+    border-top-color: var(--border-color);
+}
+
+/* Chatbot */
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#chat-toggle {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border: none;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+#chat-toggle i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 300px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+.chat-window.hidden {
+    display: none;
+}
+
+.chat-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: var(--bg-color);
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.message.user {
+    background-color: var(--primary-color);
+    color: white;
+    margin-left: auto;
+}
+
+.message.bot {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.chat-input-container {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+}
+
+/* Footer */
+footer {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+footer a {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero, .feature-card, .card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 5rem;
+        text-align: center;
+    }
+    
+    .hero img {
+        margin-top: 2rem;
+    }
+    
+    .feature-card {
+        margin-bottom: 1rem;
+    }
+    
+    .chat-window {
+        width: 280px;
+    }
+    
+    .theme-toggle-btn {
+        top: 70px;
+    }
+    
+    .btn-group {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    .btn-group .btn {
+        flex: 1;
+    }
+}
+
+/* Dog Animation */
+.dog-animation {
+    position: relative; /* Allow it to scroll with the page */
+    margin-top: 20px; /* Keep top margin */
+    margin-bottom: 0px; /* Reduce bottom margin to remove gap */
+    z-index: 10; /* Ensure it appears above other elements */
+    animation: none; /* Explicitly remove any animation */
+}
+
+.dog-animation img {
+    width: 100%; /* Make it responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Ensure no lingering animation on #animated-dog specific ID */
+#animated-dog {
+    animation: none !important; /* Force remove any animation */
+}
+
+#animated-dog {
+    position: relative; /* Allow it to scroll with the page */
+    margin: 60px auto; /* Increase the top margin to position it further down */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+#animated-dog img {
+    width: 100%; /* Make it responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Theme Classes */
+.theme-text {
+    color: var(--text-color) !important;
+}
+
+.theme-input {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border-color: var(--input-border) !important;
+}
+
+[data-theme="dark"] .theme-input {
+    background-color: var(--input-bg) !important;
+    background-image: none !important;
+}
+
+.theme-input::placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 1;
+}
+
+/* Explicit Light Theme Overrides for theme-input placeholders */
+[data-theme="light"] .theme-input::placeholder,
+[data-theme="light"] .theme-input::-webkit-input-placeholder,
+[data-theme="light"] .theme-input:-ms-input-placeholder,
+[data-theme="light"] .theme-input::-ms-input-placeholder
+{
+    color: var(--placeholder-color) !important;
+    opacity: 1 !important;
+}
+
+.theme-input::-webkit-input-placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 1;
+}
+
+.theme-input:-ms-input-placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 1;
+}
+
+.theme-input::-ms-input-placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 1;
+}
+
+.form-text {
+    color: var(--form-text-color) !important;
+}
+
+/* Pet Details Text */
+.pet-details {
+    color: var(--form-text-color) !important;
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--input-border);
+}
+
+/* Volunteer Form and Contact Form Specific Styles */
+.volunteer-form, #contact-form {
+    background-color: var(--card-bg) !important;
+}
+
+.volunteer-form .form-control,
+.volunteer-form .form-select,
+#contact-form .form-control {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    border-color: var(--input-border) !important;
+    background-image: none !important;
+}
+
+.volunteer-form .form-control::placeholder,
+.volunteer-form .form-select::placeholder,
+#contact-form .form-control::placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 1;
+}
+
+/* Rest of your existing CSS */
+.footer-icons a {
+    font-size: 1.5rem;
+}
+
+/* Consolidated Dark theme specific overrides - placed at the very end for highest specificity */
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="tel"],
+[data-theme="dark"] textarea,
+[data-theme="dark"] select,
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select
+{
+    background: none !important; /* Reset all background properties */
+    background-color: var(--input-bg) !important; /* Then set background color */
+    color: var(--input-text) !important;
+    border-color: var(--input-border) !important;
+    box-shadow: none !important; /* Ensure no light box-shadow persists */
+    -webkit-appearance: none; /* For webkit browsers */
+    -moz-appearance: none; /* For Mozilla browsers */
+    appearance: none; /* Standard property */
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25) !important;
+}
+
+[data-theme="dark"] .form-select option {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+}
+
+/* Ensure placeholder color also applies */
+[data-theme="dark"] .form-control::placeholder,
+[data-theme="dark"] .form-control::-webkit-input-placeholder,
+[data-theme="dark"] .form-control:-ms-input-placeholder,
+[data-theme="dark"] .form-control::-ms-input-placeholder,
+[data-theme="dark"] .theme-input::placeholder,
+[data-theme="dark"] .theme-input::-webkit-input-placeholder,
+[data-theme="dark"] .theme-input:-ms-input-placeholder,
+[data-theme="dark"] .theme-input::-ms-input-placeholder
+{
+    color: var(--placeholder-color) !important;
+    opacity: 1 !important;
+}
+
+/* Consolidated Light theme specific overrides - placed at the very end for highest specificity */
+[data-theme="light"] input[type="text"],
+[data-theme="light"] input[type="email"],
+[data-theme="light"] input[type="tel"],
+[data-theme="light"] textarea,
+[data-theme="light"] select,
+[data-theme="light"] .form-control,
+[data-theme="light"] .form-select,
+[data-theme="light"] .theme-input
+{
+    background: none !important; /* Reset all background properties */
+    background-color: var(--input-bg) !important; /* Then set background color for light mode */
+    color: var(--input-text) !important;
+    border-color: var(--input-border) !important;
+    box-shadow: none !important; /* Ensure no dark box-shadow persists */
+    -webkit-appearance: none; /* For webkit browsers */
+    -moz-appearance: none; /* For Mozilla browsers */
+    appearance: none; /* Standard property */
+}
+
+[data-theme="light"] .form-select option {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+}
+
+/* Ensure placeholder color also applies in light mode */
+[data-theme="light"] .form-control::placeholder,
+[data-theme="light"] .form-control::-webkit-input-placeholder,
+[data-theme="light"] .form-control:-ms-input-placeholder,
+[data-theme="light"] .form-control::-ms-input-placeholder,
+[data-theme="light"] .theme-input::placeholder,
+[data-theme="light"] .theme-input::-webkit-input-placeholder,
+[data-theme="light"] .theme-input:-ms-input-placeholder,
+[data-theme="light"] .theme-input::-ms-input-placeholder
+{
+    color: var(--placeholder-color) !important;
+    opacity: 1 !important;
+}

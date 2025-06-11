@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories - PetCity Initiative</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-paw"></i> PetCity
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="learn-more.html">Learn More</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="stories.html">Success Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources.html">Resources</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button id="theme-toggle" class="btn btn-outline-primary">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-small py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">Success Stories</h1>
+                    <p class="lead mb-4">Read inspiring stories from our community and share your own journey!</p>
+                    <button class="btn btn-primary btn-lg" onclick="openStoryModal()">
+                        <i class="fas fa-plus me-2"></i>Share Your Story
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h2>Success Stories</h2>
+                <button class="btn btn-primary" onclick="openStoryModal()">
+                    <i class="fas fa-plus me-2"></i>Share Your Story
+                </button>
+            </div>
+
+            <!-- Story Filters -->
+            <div class="d-flex flex-wrap justify-content-center mb-4">
+                <button class="btn btn-outline-primary m-2 active" data-filter="all">All Stories</button>
+                <button class="btn btn-outline-primary m-2" data-filter="rescue">Rescue</button>
+                <button class="btn btn-outline-primary m-2" data-filter="community">Community</button>
+                <button class="btn btn-outline-primary m-2" data-filter="impact">Impact</button>
+            </div>
+
+            <div class="row g-4" id="storiesGrid">
+                <!-- Impact Stories from Home Page -->
+                <div class="col-md-6 col-lg-4" data-category="impact">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=500&h=300&fit=crop" class="card-img-top" alt="Zero Animal Cruelty" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Zero Animal Cruelty Initiative</h5>
+                            <p class="card-text">"Our 24/7 helpline has received over 1,000 calls this year, leading to successful interventions in cases of animal cruelty. The rapid response team has helped rescue and rehabilitate numerous animals in need."</p>
+                            <p class="text-muted">- Animal Welfare Team</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-category="impact">
+                    <div class="card h-100">
+                        <img src="https://www.goldallianze.com.sg/wp-content/uploads/2025/01/pet-care-concept-female-veterinary-examining-cat-writing-prescription-clipboard-scaled.jpg" class="card-img-top" alt="Healthcare Access" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Healthcare Access Program</h5>
+                            <p class="card-text">"Our mobile vet clinics have provided care to over 500 pets in underserved communities. The vaccination drives have helped protect countless animals from preventable diseases."</p>
+                            <p class="text-muted">- Veterinary Services Team</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-category="impact">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=500&h=300&fit=crop" class="card-img-top" alt="Food Security" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Food Security Initiative</h5>
+                            <p class="card-text">"Our community food banks have distributed over 2,000 pounds of pet food to families in need. The emergency supplies program has helped keep pets fed during difficult times."</p>
+                            <p class="text-muted">- Community Support Team</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rescue Stories -->
+                <div class="col-md-6 col-lg-4" data-category="rescue">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=500&h=300&fit=crop" class="card-img-top" alt="Rescue Story" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Community Comes Together for Stray Dogs</h5>
+                            <p class="card-text">"When we found a group of stray dogs in our neighborhood, PetCity helped us organize a community rescue effort. With their guidance, we successfully rescued 15 dogs and found them loving homes."</p>
+                            <p class="text-muted">- Community Rescue Team, Downtown Area</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-category="rescue">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=500&h=300&fit=crop" class="card-img-top" alt="Kitten Rescue" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Kitten Rescue Mission</h5>
+                            <p class="card-text">"During a heavy rainstorm, we discovered a litter of abandoned kittens. PetCity's emergency response team arrived within minutes. Thanks to their quick action and care, all five kittens survived."</p>
+                            <p class="text-muted">- Sarah, Local Resident</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Stories -->
+                <div class="col-md-6 col-lg-4" data-category="community">
+                    <div class="card h-100">
+                        <img src="https://www.goparksaisha.hk/wp-content/uploads/2024/11/Pet-Park-2.jpg" class="card-img-top" alt="Community Event" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">First Pet-Friendly Park Opening</h5>
+                            <p class="card-text">"Our campaign for a pet-friendly park finally succeeded! With PetCity's support, we organized community meetings and worked with local authorities. The new park now features special areas for pets."</p>
+                            <p class="text-muted">- Park Initiative Committee</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-category="community">
+                    <div class="card h-100">
+                        <img src="https://scontent.fccj6-1.fna.fbcdn.net/v/t39.30808-6/474838903_994028179412369_1104482630648712613_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=lYMWwhI8zL8Q7kNvwFdWaXg&_nc_oc=Adke7UYPwaqdmNn4AIbVXYooPtLzfT_YYX2m4wME1xYH2Qmn39kmbsPGU6jSvK_NJEflqFlnjuwrJBrVaYwuePYh&_nc_zt=23&_nc_ht=scontent.fccj6-1.fna&_nc_gid=kuL0_NTOJtcoVscWFwDfsg&oh=00_AfOiWHtMuyJ94enx5dUcj26peDBZXClkaXlI8SKaeT2f6g&oe=684F2243" class="card-img-top" alt="Volunteer Program" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Youth Volunteer Program Success</h5>
+                            <p class="card-text">"Our youth volunteer program has grown from 5 to 50 members in just one year! Young people are learning about animal care and making a real difference in their community."</p>
+                            <p class="text-muted">- Youth Program Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Details Modal -->
+    <div class="modal fade" id="storyDetailsModal" tabindex="-1" aria-labelledby="storyDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="storyDetailsModalLabel">Story Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="storyDetailsContent">
+                    <!-- Story details will be populated here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Your Story Modal -->
+    <div class="modal fade" id="storyModal" tabindex="-1" aria-labelledby="storyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="storyModalLabel">Share Your Story</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="story-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="storyName" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" name="storyEmail" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select" name="storyCategory" required>
+                                <option value="" disabled selected>Select Story Category</option>
+                                <option value="rescue">Rescue Story</option>
+                                <option value="community">Community Story</option>
+                                <option value="impact">Impact Story</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="storyText" rows="4" placeholder="Your Story" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Story</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                   
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2025 PetCity. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Story filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const storyCards = document.querySelectorAll('#storiesGrid > div');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    // Filter stories
+                    storyCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
